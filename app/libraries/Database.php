@@ -30,6 +30,7 @@
          try {
 
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+            $this -> dbh -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
          } 
          catch(PDOException $e){
@@ -82,14 +83,14 @@
       // GET RESULT SET AS ARRAY OF OBJECT
       public function resultSet(){
          $this->execute();
-         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+         return $this->stmt->fetchAll();
 
       } // resultSet()
 
       // GET SINGLE RECORD AS OBJECT
       public function single(){
          $this->execute();
-         return $this->stmt->fetch(PDO::FETCH_OBJ);
+         return $this->stmt->fetch();
       }
 
       // GET THE ROWCOUNT
