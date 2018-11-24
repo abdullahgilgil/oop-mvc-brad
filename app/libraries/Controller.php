@@ -1,6 +1,6 @@
 <?php 
    /**
-    * This is the Base Controller
+    * This is the BASE Controller
     * Loads the Models and Views
     */
 
